@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import Card from "./Component/Card";
 
 function App() {
+  useEffect(() => {
+    getLocalTodos();
+  }, []);
+
+  const [birthday, setBirthday] = useState({});
+  const [birthdayList, setBirthdayList] = useState([]);
+
+  useEffect(() => {
+    saveLocalTodos();
+  }, [birthdayList]);
+
+  const saveLocalTodos = () => {
+    localStorage.setItem("birthdayList", JSON.stringify(birthdayList));
+  };
+
+  const getLocalTodos = () => {
+    if (localStorage.getItem("birthdayList") === "null") {
+      localStorage.setItem("birthdayList", JSON.stringify([]));
+    } else {
+      const local = JSON.parse(
+        localStorage.getItem("birthdayList", JSON.stringify("birthdayList"))
+      );
+      setBirthdayList(local);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Card
+        setBirthday={setBirthday}
+        birthday={birthday}
+        birthdayList={birthdayList}
+        setBirthdayList={setBirthdayList}
+      />
     </div>
   );
 }

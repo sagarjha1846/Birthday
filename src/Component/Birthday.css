@@ -1,0 +1,78 @@
+.birthday__image {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 5px;
+
+  margin: 5px auto;
+  padding: 3px;
+}
+
+.birthday__image img {
+  margin: 2px;
+  padding: 5px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.birthday__body {
+  width: 100%;
+  text-align: left;
+  padding: 5px;
+}
+
+.birthday__body h3 {
+  font-weight: Bold;
+}
+
+.birthday__body span {
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 14px;
+  color: grey;
+}
+
+.birthday__body span {
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.birthday__body p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+.options button:first-child {
+  background-color: green;
+  padding: 5px;
+  color: white;
+  font-size: 17px;
+  font-style: normal;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 1px;
+  border: 1px solid blue;
+}
+
+.options button:last-child {
+  background-color: red;
+  padding: 5px;
+  color: white;
+  font-size: 17px;
+  font-style: normal;
+  border-radius: 3px;
+  border: 1px solid blue;
+  font-weight: bold;
+  margin: 1px;
+}
